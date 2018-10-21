@@ -77,19 +77,53 @@ li {
     z-index: 999;
 }
 
-#top-head a,
-#top-head {
+a {
     color: #fff;
     text-decoration: none;
 }
 
+#top-head a {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+}
+
+#top-head a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    /*    width: 100%;*/
+    height: 2px;
+    background: #fff;
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform .3s;
+}
+
+.logo::after {
+    width: 100%;
+    margin-left: 10px;
+}
+
+#top-head li a::after {
+    width: 80%;
+    margin-left: 10px;
+}
+
+#top-head a:hover::after {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
 #top-head .inner {
     position: relative;
+    width: 100%;
 }
 
 #top-head .logo {
     float: left;
-    font-size: 36px;
+    margin-left: 20px;
 }
 
 #global-nav ul {
@@ -105,7 +139,7 @@ li {
 }
 
 #global-nav ul li a {
-    padding: 0 30px;
+    padding: 0 20px;
 }
 
 
@@ -176,73 +210,73 @@ li {
     top: 22px;
 }
 
-.moment {
+.cities {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cities a {
+    cursor: default;
+}
+
+.cities h1 {
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.cities h1:hover {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* コンテンツのスタイル */
+
+.wrapper {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.moment img {
-    width: 50%;
-    -webkit-filter: drop-shadow(0px 3px 10px rgba(255, 255, 255, .8));
-    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, .8));
+.contents {
+    height: 100vh;
+    background-image: url(../img/index/20180626-292A1627.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#supersized img {
-    -moz-animation: move 38s ease infinite;
-    -webkit-animation: move 38s ease infinite;
-    animation: move 38s ease infinite;
+
+/* ボタンホバー時のスタイル */
+
+.bg-change.no1:hover ~ .wrapper .contents {
+    background-image: url(../img/index/20180626-292A1699.jpg);
 }
 
-@-moz-keyframes move {
-    0% {
-        -moz-transform: scale(1);
-        transform: scale(1);
-    }
-    50% {
-        -moz-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-    100% {
-        -moz-transform: scale(1);
-        transform: scale(1);
-    }
+.bg-change.no2:hover ~ .wrapper .contents {
+    background-image: url(/* ホバー背景画像２のURL */);
 }
 
-@-webkit-keyframes move {
-    0% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-    50% {
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
+.bg-change.no3:hover ~ .wrapper .contents {
+    background-image: url(/* ホバー背景画像３のURL */);
 }
 
-@keyframes move {
-    0% {
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-    50% {
-        -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-    100% {
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -webkit-transform: scale(1);
-        transform: scale(1);
+
+/* external css: flickity.css */
+
+
+.carousel {
+    background: #EEE;
+}
+
+.carousel img {
+    display: block;
+    height: 200px;
+}
+
+@media screen and ( min-width: 768px) {
+    .carousel img {
+        height: 600px;
     }
 }

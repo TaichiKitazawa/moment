@@ -4,6 +4,7 @@ jQuery(function ($) {
         slide_interval: 5000, //1画像の表示時間
         transition: 1, //切り替え効果
         transition_speed: 300, //切り替えスピード
+        random: 1,
         slides: [
             {
                 image: 'img/index/20180903-292A6494.jpg'
@@ -13,7 +14,20 @@ jQuery(function ($) {
             },
             {
                 image: 'img/index/20180903-292A6777.jpg'
-            }
+            },
+            {
+                image: 'img/index/292A9708.jpg'
+            },
+            {
+                image: 'img/index/20180626-292A1627.jpg'
+            },
+            {
+                image: 'img/index/20180626-292A1699.jpg'
+            },
+            {
+                image: 'img/index/20180628-292A3259.jpg'
+            },
+            
         ]
     });
 });

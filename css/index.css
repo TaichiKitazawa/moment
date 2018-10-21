@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*
+nav {
+    z-index: 100;
+    padding-top: 40px;
+    position: fixed;
+    width: 940px;
+    left: 50%;
+    margin-left: -470px;
+    font-weight: 300;
+    vertical-align: text-bottom;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.top {
+    float: left;
+    margin-right: 10%;
+}
+
+.top h1 {
+    font-size: 2.2rem;
+    margin-right: 50px;
+}
+
+ul {
+    float: left;
+    padding-top: 7px;
+}
+
+li {
+    float: left;
+    font-size: 1.5rem;
+    margin-right: 25px;
+}
+*/
+
+.inner {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.inner:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+/* https://www.webopixel.net/javascript/1060.html */
+
+
+/* header */
+
+#top-head {
+    top: -100px;
+    position: absolute;
+    width: 100%;
+    margin: 100px auto 0;
+    padding: 30px 0 0;
+    line-height: 1;
+    z-index: 999;
+}
+
+#top-head a {
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+}
+
+#top-head a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+/*    width: 100%;*/
+    height: 2px;
+    background: #fff;
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform .3s;
+}
+
+.logo::after{
+    width: 100%;
+    margin-left: 10px;
+}
+
+#top-head li a::after{
+    width: 80%;
+    margin-left: 10px;
+}
+
+#top-head a:hover::after {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
+#top-head .inner {
+    position: relative;
+    width: 100%;
+}
+
+.logo h1{
+    float: left;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+#global-nav ul {
+    list-style: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
+}
+
+#global-nav ul li {
+    float: left;
+}
+
+#global-nav ul li a {
+    padding: 0 20px;
+}
+
+
+/* Fixed */
+
+#top-head.fixed {
+    margin-top: 0;
+    top: 0;
+    position: fixed;
+    padding-top: 10px;
+    height: 55px;
+    background: #fff;
+    background: rgba(255, 255, 255, .7);
+    transition: top 0.65s ease-in;
+    -webkit-transition: top 0.65s ease-in;
+    -moz-transition: top 0.65s ease-in;
+}
+
+#top-head.fixed .logo {
+    font-size: 24px;
+    color: #333;
+}
+
+#top-head.fixed #global-nav ul li a {
+    color: #333;
+    padding: 0 20px;
+}
+
+
+/* Toggle Button */
+
+#nav-toggle {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    width: 34px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+#nav-toggle div {
+    position: relative;
+}
+
+#nav-toggle span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #666;
+    left: 0;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+}
+
+#nav-toggle span:nth-child(1) {
+    top: 0;
+}
+
+#nav-toggle span:nth-child(2) {
+    top: 11px;
+}
+
+#nav-toggle span:nth-child(3) {
+    top: 22px;
+}
+
+.moment {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moment img {
+    width: 50%;
+    -webkit-filter: drop-shadow(0px 3px 10px rgba(255, 255, 255, .8));
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, .8));
+}
+
+#supersized img {
+    -moz-animation: move 38s ease infinite;
+    -webkit-animation: move 38s ease infinite;
+    animation: move 38s ease infinite;
+}
+
+@-moz-keyframes move {
+    0% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -moz-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes move {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes move {
+    0% {
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -moz-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+    100% {
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
