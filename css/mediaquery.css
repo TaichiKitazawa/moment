@@ -96,6 +96,11 @@
         margin: 0 auto;
     }
     
+    .description{
+        width: 100%;
+        margin: 0 auto;
+    }
+    
     .english, .japanese{
         width: 100%;
     }

@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="css/mediaquery.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
-    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -58,8 +57,8 @@
            <div class="english">
                <h2>Taichi Kitazawa</h2>
             <p>Born in 1996, Shibuya Tokyo.</p>
-            <p>Start Photography since September 2016.</p>
-            <p>I will be planner in IT company.</p>
+            <p>Started Photography since September 2016.</p>
+            <p>I will be a planner in IT company.</p>
             <h2>Education</h2>
             <p>2012-2015 Keio High School</p>
             <p>2015- B.A. the department of economics, Keio University</p>
@@ -81,5 +80,24 @@
         </div>
     </div>
 </body>
+<script>
+    (function ($) {
+    $(function () {
+        var $header = $('#top-head');
+        // Nav Fixed
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 350) {
+                $header.addClass('fixed');
+            } else {
+                $header.removeClass('fixed');
+            }
+        });
+        // Nav Toggle Button
+        $('#nav-toggle').click(function () {
+            $header.toggleClass('open');
+        });
+    });
+})(jQuery);
 
+</script>
 </html>
