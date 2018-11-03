@@ -85,4 +85,18 @@
         -webkit-transform: translateY(556px);
         transform: translateY(556px);
     }
+    
+    .main{
+        width: 90%;
+        margin : 10% auto;
+    }
+    
+    .my_photo{
+        width: 60%;
+        margin: 0 auto;
+    }
+    
+    .english, .japanese{
+        width: 100%;
+    }
 }
